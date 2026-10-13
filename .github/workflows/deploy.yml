@@ -1,0 +1,75 @@
+# Automatický upload webu na FTP (Active24) při pushi do master.
+# Secrets (repozitář -> Settings -> Secrets and variables -> Actions, nebo Environment "production"):
+#   FTP_SERVER      např. ftp.sigurd.site (bez protokolu a cesty)
+#   FTP_USERNAME    FTP účet z administrace Active24 (kořen účtu = docroot webu)
+#   FTP_PASSWORD    heslo
+#   FTP_SERVER_DIR  cílový adresář s lomítkem na konci, např. /
+# Volitelně Variables: FTP_PROTOCOL (ftps výchozí / ftp), SITE_URL.
+# POZOR: mirror --delete maže na serveru vše, co není v repu, proto má mít FTP účet kořen jen ve složce webu.
+
+name: Deploy
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-${{ github.ref_name }}
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: production
+      url: ${{ vars.SITE_URL }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Připravit obsah webu
+        run: |
+          mkdir _site
+          rsync -a \
+            --exclude '.git/' --exclude '.github/' --exclude '.agents/' --exclude '_site/' \
+            --exclude '*.md' --exclude 'QA_RESULTS_*.json' --exclude 'EMAIL_README.txt' \
+            --exclude 'VERSION.txt' --exclude '.gitignore' \
+            ./ _site/
+          printf '%s\n%s\n%s\n' "$GITHUB_REF_NAME" "$GITHUB_SHA" "$(date -u +%Y-%m-%dT%H:%M:%SZ)" > _site/version.txt
+
+      - name: Nainstalovat lftp
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq lftp
+
+      - name: Nahrát přes FTP (lftp mirror)
+        env:
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          LFTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+          FTP_SERVER_DIR: ${{ secrets.FTP_SERVER_DIR }}
+          FTP_PROTOCOL: ${{ vars.FTP_PROTOCOL || 'ftps' }}
+        run: |
+          set -euo pipefail
+          FTP_SERVER="$(printf '%s' "$FTP_SERVER" | tr -d '\r\n\t ')"
+          FTP_USERNAME="$(printf '%s' "$FTP_USERNAME" | tr -d '\r\n\t ')"
+          FTP_SERVER_DIR="$(printf '%s' "$FTP_SERVER_DIR" | tr -d '\r\n\t ')"
+          for v in FTP_SERVER FTP_USERNAME LFTP_PASSWORD FTP_SERVER_DIR; do
+            [ -n "${!v}" ] || { echo "::error::Chybí secret ${v#LFTP_}"; exit 1; }
+          done
+          case "$FTP_SERVER_DIR" in */) ;; *) echo "::error::FTP_SERVER_DIR musí končit lomítkem"; exit 1 ;; esac
+          if [ "$FTP_PROTOCOL" = "ftp" ]; then SSL=false; else SSL=true; fi
+
+          cat > /tmp/deploy.lftp <<EOT
+          set cmd:fail-exit true
+          set net:timeout 30
+          set net:max-retries 2
+          set net:reconnect-interval-base 5
+          set ftp:passive-mode true
+          set ftp:ssl-force $SSL
+          set ftp:ssl-protect-data $SSL
+          set ssl:verify-certificate no
+          set ssl:check-hostname no
+          open -u "$FTP_USERNAME" --env-password "$FTP_SERVER"
+          mirror --reverse --delete --no-perms --parallel=4 --verbose=1 ./_site/ "$FTP_SERVER_DIR"
+          bye
+          EOT
+          lftp -f /tmp/deploy.lftp
