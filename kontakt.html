@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="cs"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#050912"><title>Bezplatná konzultace nebo dotaz | Sigurd</title><meta name="description" content="Máte nápad na web, aplikaci nebo automatizaci? Napište mi. Bezplatná úvodní konzultace nebo nezávazný dotaz."><meta name="robots" content="index,follow"><link rel="canonical" href="https://sigurd.site/kontakt.html"><meta property="og:title" content="Bezplatná konzultace nebo dotaz | Sigurd"><meta property="og:description" content="Pojďme společně najít jednoduché a užitečné řešení vašeho problému."><link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css?v=14.2"><link rel="stylesheet" href="contact.css?v=14.2"><link rel="stylesheet" href="cv-request.css?v=14.2">  <link rel="stylesheet" href="performance-v9.css?v=14.2"><link rel="stylesheet" href="portrait-v10.css?v=14.2">
+<link rel="stylesheet" href="modal-actions.css?v=14.2">  <link rel="stylesheet" href="layout-v14.css?v=14.2">
+</head>
+<body class="contact-page"><canvas id="contactParticles" aria-hidden="true"></canvas><header class="contact-page-header"><a href="index.html" class="contact-brand">SIGURD<span>.</span> <small>↗ ZPĚT NA PORTFOLIO</small></a><nav aria-label="Navigace"><a href="web.html">Web</a><a href="aplikace.html">Aplikace</a><a href="backend.html">Backend</a><a href="ai.html">AI</a><a href="o-mne.html">O mně</a></nav><div class="contact-page-actions"><button type="button" class="contact-header-link" data-contact-open><span aria-hidden="true">✉</span> Konzultace</button><button type="button" class="cv-header-link" data-cv-open><span aria-hidden="true">▤</span> Požádat o CV</button></div></header>
+<main class="contact-page-main"><section class="contact-intro"><div class="contact-person"><img src="assets/sigurd-portrait.webp" alt="Sigurd Gnezdilov – vývojář" width="950" height="950" loading="eager" decoding="async"><div><strong>Sigurd Gnezdilov</strong><span>Osobně odpovídám na vaše zprávy.</span></div></div><span class="contact-kicker">◉ OPEN CONNECTION / NO OBLIGATION</span><h1>Bezplatná konzultace <em>nebo dotaz.</em></h1><p>Máte nápad, opakující se úkol nebo jen otázku? Nemusíte znát technologie ani mít hotové zadání. Stačí popsat, co chcete vyřešit.</p><div class="contact-benefits"><div><span>01</span><strong>Řeknete mi svůj problém</strong><small>Co vás zdržuje, nefunguje nebo by šlo zlepšit.</small></div><div><span>02</span><strong>Probereme možnosti</strong><small>Společně určíme směr a přiměřené řešení.</small></div><div><span>03</span><strong>Navrhneme další krok</strong><small>Bez závazků a bez složité technické přípravy.</small></div></div><div class="contact-lines" aria-hidden="true"><span></span><span></span><span></span></div></section><section class="contact-page-form"><span class="contact-kicker">◉ TRANSMIT MESSAGE</span><h2>Co pro vás mohu udělat?</h2><p>Vyplňte krátký formulář a já se vám ozvu.</p><div data-contact-form></div></section></main><footer class="contact-page-footer"><span>SIGURD / NEURAL INTERFACE</span><a href="index.html">ZPĚT NA ÚVOD ↗</a></footer><script src="contact.js?v=14.2" defer></script>
+
+    <div class="cv-modal" id="cvModal" hidden>
+      <div class="cv-modal-backdrop" data-cv-close></div>
+      <section class="cv-modal-panel" role="dialog" aria-modal="true" aria-labelledby="cvModalTitle" aria-describedby="cvModalDescription" tabindex="-1">
+        <button class="cv-modal-close" type="button" data-cv-close aria-label="Zavřít okno">×</button>
+        <span class="cv-modal-kicker"><span class="cv-live-dot"></span> PRIVATE / CONNECTION REQUEST</span>
+        <div class="cv-modal-symbol" aria-hidden="true"><span>CV</span></div>
+        <h2 id="cvModalTitle">Získat moje <em>CV.</em></h2>
+        <p id="cvModalDescription">Zadejte e-mail, na který vám mohu zaslat svůj profesní životopis. Po odeslání žádosti se vám ozvu osobně.</p>
+        <form id="cvRequestForm" novalidate>
+          <label for="cvEmail">VÁŠ E-MAIL</label>
+          <div class="cv-input-shell"><span aria-hidden="true">@</span><input id="cvEmail" name="email" type="email" autocomplete="email" inputmode="email" placeholder="vas@email.cz" maxlength="254" required></div>
+          <div class="cv-honeypot" aria-hidden="true"><label for="cvWebsite">Web</label><input id="cvWebsite" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+          <p class="cv-privacy">E-mail použiji pouze pro vyřízení žádosti o CV. Nejedná se o přihlášení k odběru.</p>
+          <p class="cv-feedback" id="cvFeedback" role="status" aria-live="polite"></p>
+          <button class="cv-submit" type="submit"><span>ODESLAT ŽÁDOST</span><span aria-hidden="true">↗</span></button>
+        </form>
+      </section>
+    </div>
+
+<div class="contact-modal" id="contactModal" hidden>
+  <div class="contact-shade" data-contact-close></div>
+  <section class="contact-dialog" role="dialog" aria-modal="true" aria-labelledby="contactModalTitle" tabindex="-1">
+    <button class="contact-close" type="button" aria-label="Zavřít kontaktní formulář" data-contact-close>×</button>
+    <span class="contact-kicker">◉ NOVÉ SPOJENÍ / CONTACT</span>
+    <h2 id="contactModalTitle">Bezplatná konzultace <em>nebo dotaz.</em></h2>
+    <p>Popište mi svůj nápad, problém nebo otázku. Ozvu se vám osobně.</p>
+    <div data-contact-form></div>
+    <p class="contact-alt">Chcete více prostoru? <a href="kontakt.html">Otevřít kontaktní stránku ↗</a></p>
+  </section>
+</div><script src="cv-request.js?v=14.2" defer></script></body></html>

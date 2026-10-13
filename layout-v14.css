@@ -1,0 +1,43 @@
+/* v14: stable responsive homepage, unaffected by previous experimental positions. */
+@media (min-width:981px) {
+  .hero{height:1150px!important;min-height:1150px!important}
+  .hero .neural-destinations{position:static!important;transform:none!important}
+  .hero .destination-web{left:50%!important;right:auto!important;top:410px!important;transform:translateX(-50%)!important}
+  .hero .destination-backend{left:max(6%,calc(50% - 555px))!important;right:auto!important;top:565px!important;transform:none!important}
+  .hero .destination-apps{right:max(6%,calc(50% - 555px))!important;left:auto!important;top:565px!important;transform:none!important}
+  .hero .destination-ai{left:max(6%,calc(50% - 555px))!important;right:auto!important;top:780px!important;transform:none!important;width:260px!important}
+  .hero .destination-gamedev{right:max(6%,calc(50% - 555px))!important;left:auto!important;top:780px!important;transform:none!important}
+  .hero .brain-anchor{top:975px!important;left:50%!important;transform:translate(-50%,-50%)!important}
+}
+@media (min-width:671px) and (max-width:980px) {
+  .hero{height:1210px!important;min-height:1210px!important}
+  .hero .hero-title-wrap{top:150px!important}
+  .hero .neural-destinations{position:static!important;transform:none!important}
+  .hero .destination{width:min(38vw,260px)!important;min-height:100px!important;padding:14px!important;gap:10px!important}
+  .hero .destination-web{left:50%!important;right:auto!important;top:420px!important;transform:translateX(-50%)!important}
+  .hero .destination-backend{left:7%!important;right:auto!important;top:595px!important;transform:none!important}
+  .hero .destination-apps{right:7%!important;left:auto!important;top:595px!important;transform:none!important}
+  .hero .destination-ai{left:7%!important;right:auto!important;top:795px!important;transform:none!important}
+  .hero .destination-gamedev{right:7%!important;left:auto!important;top:795px!important;transform:none!important}
+  .hero .brain-anchor{top:1025px!important;left:50%!important;transform:translate(-50%,-50%)!important}
+  .hero .dest-copy strong{font-size:clamp(18px,2.4vw,22px)!important}
+}
+@media (max-width:670px) {
+  .hero{height:1720px!important;min-height:1720px!important}
+  .app{min-height:1720px}
+  .hero .hero-title-wrap{top:135px!important}
+  .hero .neural-destinations{position:absolute!important;inset:0!important;transform:none!important;pointer-events:none}
+  .hero .destination{left:50%!important;right:auto!important;transform:translateX(-50%)!important;width:min(82vw,320px)!important;pointer-events:auto;min-height:100px!important}
+  .hero .destination-web{top:445px!important}
+  .hero .destination-backend{top:610px!important}
+  .hero .destination-ai{top:775px!important}
+  .hero .destination-apps{top:940px!important}
+  .hero .destination-gamedev{top:1105px!important}
+  .hero .brain-anchor{left:50%!important;top:1430px!important;transform:translate(-50%,-50%)!important}
+  .hero .destination .node-socket{left:calc(50% - 10px)!important;right:auto!important;top:-12px!important;bottom:auto!important}
+  .hero .destination-web .node-socket{top:auto!important;bottom:-12px!important}
+}
+/* Keep all contact CTAs above animated neural content. */
+.hero-title-wrap{z-index:15!important;pointer-events:none}
+.hero-title-wrap button{pointer-events:auto}
+.hero .destination{z-index:8}

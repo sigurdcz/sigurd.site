@@ -1,0 +1,86 @@
+{
+  "pages": [
+    {
+      "page": "web.html",
+      "cv_button": 1,
+      "modal": 1,
+      "about_process": 6,
+      "duplicate_ids": [],
+      "missing_local_resources": []
+    },
+    {
+      "page": "o-mne.html",
+      "cv_button": 1,
+      "modal": 1,
+      "about_process": 6,
+      "duplicate_ids": [],
+      "missing_local_resources": []
+    },
+    {
+      "page": "ai.html",
+      "cv_button": 1,
+      "modal": 1,
+      "about_process": 6,
+      "duplicate_ids": [],
+      "missing_local_resources": []
+    },
+    {
+      "page": "aplikace.html",
+      "cv_button": 1,
+      "modal": 1,
+      "about_process": 6,
+      "duplicate_ids": [],
+      "missing_local_resources": []
+    },
+    {
+      "page": "gamedev.html",
+      "cv_button": 1,
+      "modal": 1,
+      "about_process": 6,
+      "duplicate_ids": [],
+      "missing_local_resources": []
+    },
+    {
+      "page": "backend.html",
+      "cv_button": 1,
+      "modal": 1,
+      "about_process": 6,
+      "duplicate_ids": [],
+      "missing_local_resources": []
+    },
+    {
+      "page": "index.html",
+      "cv_button": 2,
+      "modal": 1,
+      "about_process": 6,
+      "duplicate_ids": [],
+      "missing_local_resources": []
+    }
+  ],
+  "javascript": [
+    {
+      "file": "portfolio-v3.js",
+      "syntax_ok": true
+    },
+    {
+      "file": "app.js",
+      "syntax_ok": true
+    },
+    {
+      "file": "cv-request.js",
+      "syntax_ok": true
+    },
+    {
+      "file": "portfolio.js",
+      "syntax_ok": true
+    },
+    {
+      "file": "portfolio-data.js",
+      "syntax_ok": true
+    },
+    {
+      "file": "media-map.js",
+      "syntax_ok": true
+    }
+  ]
+}

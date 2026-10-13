@@ -1,0 +1,7 @@
+/* Neural Portfolio v9: defer expensive paint of below-fold panels. */
+@media (min-width: 671px) {
+  .portfolio-section, .portfolio-showcase, .case-section, .story-section {content-visibility:auto;contain-intrinsic-size:auto 700px}
+}
+@media (prefers-reduced-motion: reduce) {
+  .background-ambient span, .brain-aura {animation:none!important}
+}

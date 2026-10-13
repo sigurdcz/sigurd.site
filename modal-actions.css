@@ -1,0 +1,5 @@
+
+.contact-page-actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.contact-page-actions button{white-space:nowrap;cursor:pointer;border:1px solid #719eff66;border-radius:9px;padding:10px 14px;color:#e4f3ff;background:linear-gradient(120deg,#173054b8,#101f3fa8);font:600 12px inherit}
+.contact-page-actions button:hover{border-color:#9eeae4;box-shadow:0 0 20px #58c8fa38}
+@media(max-width:980px){.contact-page-header{flex-wrap:wrap;gap:12px}.contact-page-actions{width:100%;justify-content:center}}

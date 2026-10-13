@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="cs" data-initial-route="home">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#050912">
+  <meta name="description" content="Vyberte, co vás zajímá. Interaktivní neuronové portfolio: backend, webdesign, aplikace na míru, GameDev a AI.">
+  <title>Sigurd — Backend, Web, Aplikace, GameDev a AI | Portfolio</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="https://sigurd.site/">
+  <meta property="og:url" content="https://sigurd.site/">
+  <meta property="og:type" content="website"><meta property="og:locale" content="cs_CZ">
+  <meta property="og:title" content="Sigurd — Backend, Web, Aplikace, GameDev, AI">
+  <meta property="og:description" content="Interaktivní vývojářské portfolio a vybrané zkušenosti napříč pěti obory.">
+  <meta property="og:image" content="https://sigurd.site/assets/og-home.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="style.css?v=14.2">
+  <link rel="stylesheet" href="portfolio.css?v=14.2">
+  <link rel="stylesheet" href="portfolio-v3.css?v=14.2">
+  <link rel="stylesheet" href="cv-request.css?v=14.2">
+  <link rel="stylesheet" href="contact.css?v=14.2">
+  <link rel="stylesheet" href="ux-fixes-v7.css?v=14.2">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ProfilePage", "inLanguage": "cs-CZ", "name": "Sigurd — osobní portfolio", "url": "https://sigurd.site/", "mainEntity": {"@type": "Person", "name": "Sigurd Gnezdilov", "url": "https://sigurd.site/", "knowsAbout": ["Backend", "Web", "Aplikace", "Game development", "Umělá inteligence"]}}</script>
+  <link rel="stylesheet" href="performance-v9.css?v=14.2"><link rel="stylesheet" href="portrait-v10.css?v=14.2">
+<link rel="stylesheet" href="modal-actions.css?v=14.2">  <link rel="stylesheet" href="layout-v14.css?v=14.2">
+</head>
+<body>
+  <a class="skip-link" href="#mainContent">Přejít na obsah</a>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="loading-screen" id="loadingScreen" role="status" aria-label="Načítání neuronové sítě">
+    <div class="loading-box">
+      <div class="loader-glyph"><span></span><span></span><span></span><span></span><span></span></div>
+      <p class="loader-eyebrow">SIGURD <b>///</b> NEURAL INTERFACE</p>
+      <h2>Propojuji<span class="loader-cursor">_</span></h2>
+      <div class="loader-track"><span id="loadingBar"></span></div>
+      <div class="loader-bottom"><span>INITIALIZING CONNECTIONS</span><span id="loadingValue">00%</span></div>
+    </div>
+  </div>
+
+  <div class="app" id="app">
+    <div class="background-ambient" aria-hidden="true"><span></span><span></span><span></span></div>
+    <canvas id="neuralCanvas" class="neural-canvas" aria-hidden="true"></canvas>
+
+    <header class="site-header">
+      <a href="#" class="brand" id="brandLink" aria-label="Sigurd — domovská stránka">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+        <span class="brand-text"><strong>SIGURD<span class="brand-dot">.</span></strong><small>CREATIVE DEVELOPER</small></span>
+      </a>
+      <div class="header-right">
+        <span class="status"><i></i> SYSTEM ONLINE <span class="status-divider">/</span> EST. 2026</span>
+        <button class="contact-header-link" type="button" data-contact-open><span aria-hidden="true">✉</span> Bezplatná konzultace <span aria-hidden="true">↗</span></button>
+        <button class="cv-header-link" type="button" data-cv-open><span aria-hidden="true">▤</span> Požádat o CV <span aria-hidden="true">↗</span></button>
+        <button class="header-menu" id="aboutButton" type="button"><span>O MNĚ</span><span class="header-plus">↗</span></button>
+      </div>
+    </header>
+
+    <main id="mainContent">
+      <section class="hero" id="hero" aria-labelledby="heroTitle">
+        <div class="hero-dash hero-dash-left" aria-hidden="true"><span>001 — THE MIND BEHIND THE CODE</span></div>
+        <div class="hero-dash hero-dash-right" aria-hidden="true"><span>EXPLORE / CONNECT / CREATE</span></div>
+
+        <div class="hero-title-wrap">
+          <p class="eyebrow"><span class="mini-line"></span> VÍTEJTE V MÉ MYSLI <span class="mini-line"></span></p>
+          <h1 id="heroTitle" class="hero-clean-title">Vyberte, co vás <em>zajímá.</em></h1>
+          
+          <p class="hero-description">Pět propojených oborů. <span>Vydejte se po neuronové síti.</span></p>
+          <button class="contact-hero-link" type="button" data-contact-open>✦ Bezplatná konzultace nebo dotaz ↗</button>
+          <button class="cv-hero-link" type="button" data-cv-open>✧ Požádat o CV <span aria-hidden="true">↗</span></button>
+        </div>
+
+        <div class="brain-anchor" id="brainAnchor" aria-hidden="true">
+          <span class="brain-aura"></span>
+          <span class="brain-reticle reticle-top"></span>
+          <span class="brain-reticle reticle-bottom"></span>
+          <span class="brain-id">NEURAL / CORE <i>01</i></span>
+        </div>
+
+        <div class="field-label field-label-left"><span class="label-line"></span> CONTINUOUS LEARNING</div>
+        <div class="field-label field-label-right">MULTIDISCIPLINARY THINKING <span class="label-line"></span></div>
+
+        <div class="neural-destinations" id="destinations">
+          <button type="button" class="destination destination-backend" data-node="backend" style="--node-rgb: 89,227,229; --node-index:0" aria-label="Otevřít obor Backend">
+            <span class="node-socket" aria-hidden="true"><span></span></span>
+            <span class="dest-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m8 7-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg></span>
+            <span class="dest-copy"><small><b>01</b> / ARCHITECTURE</small><strong>Backend<span class="dest-arr">↗</span></strong><span class="dest-meta">Logika, API, systémy</span></span>
+          </button>
+
+          <button type="button" class="destination destination-web" data-node="web" style="--node-rgb: 123,160,255; --node-index:1" aria-label="Otevřít obor Web">
+            <span class="node-socket" aria-hidden="true"><span></span></span>
+            <span class="dest-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg></span>
+            <span class="dest-copy"><small><b>02</b> / DIGITAL EXPERIENCES</small><strong>Web<span class="dest-arr">↗</span></strong><span class="dest-meta">Design, UX, SEO</span></span>
+          </button>
+
+          <button type="button" class="destination destination-apps" data-node="aplikace" style="--node-rgb: 185,145,255; --node-index:2" aria-label="Otevřít obor Aplikace">
+            <span class="node-socket" aria-hidden="true"><span></span></span>
+            <span class="dest-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="8" height="8" rx="1"/><rect x="13" y="3" width="8" height="8" rx="1"/><rect x="3" y="13" width="8" height="8" rx="1"/><rect x="13" y="13" width="8" height="8" rx="1"/></svg></span>
+            <span class="dest-copy"><small><b>03</b> / CUSTOM SOFTWARE</small><strong>Aplikace<span class="dest-arr">↗</span></strong><span class="dest-meta">Nástroje, automatizace</span></span>
+          </button>
+
+          <button type="button" class="destination destination-gamedev" data-node="gamedev" style="--node-rgb: 255,175,126; --node-index:3" aria-label="Otevřít obor GameDev">
+            <span class="node-socket" aria-hidden="true"><span></span></span>
+            <span class="dest-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 8h12a4 4 0 0 1 3.8 3l1.1 6.1a2.8 2.8 0 0 1-4.5 2.6l-2.3-2H7.9l-2.3 2a2.8 2.8 0 0 1-4.5-2.6L2.2 11A4 4 0 0 1 6 8Z"/><path d="M8 10v6M5 13h6M16.5 12.5h.01M19 15h.01"/></svg></span>
+            <span class="dest-copy"><small><b>04</b> / INTERACTIVE WORLDS</small><strong>GameDev<span class="dest-arr">↗</span></strong><span class="dest-meta">Unity, svět, gameplay</span></span>
+          </button>
+
+          <button type="button" class="destination destination-ai" data-node="ai" style="--node-rgb: 232,142,204; --node-index:4" aria-label="Otevřít obor AI">
+            <span class="node-socket" aria-hidden="true"><span></span></span>
+            <span class="dest-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="4" r="2"/><circle cx="4" cy="18" r="2"/><circle cx="20" cy="18" r="2"/><circle cx="12" cy="13" r="3"/><path d="M12 6v4M9.4 14.5 5.5 17M14.6 14.5l3.9 2.5"/></svg></span>
+            <span class="dest-copy"><small><b>05</b> / INTELLIGENCE</small><strong>AI <span class="dest-arr">↗</span></strong><span class="dest-meta">LLM, agenti, RAG</span></span>
+          </button>
+        </div>
+
+        <div class="hero-footer">
+          <div class="scroll-cue"><span class="mouse-cue"><span></span></span><span>POHYBUJTE KURZOREM <b>·</b> VYBERTE UZEL</span></div>
+          <div class="hero-counter"><span class="counter-dots"><i></i><i></i><i></i></span><span>05 <em>/</em> CONNECTED DOMAINS</span></div>
+        </div>
+      </section>
+
+      <section class="detail-view" id="detailView" aria-hidden="true" aria-labelledby="detailTitle">
+        <div class="detail-wrap">
+          <div class="detail-toolbar">
+            <button type="button" class="back-button" id="backButton"><span class="back-symbol">←</span><span>ZPĚT DO SÍTĚ</span></button>
+            <span class="detail-index" id="detailIndex">01 / 05</span>
+          </div>
+          <div class="detail-main">
+            <div class="detail-copy">
+              <p class="detail-overline" id="detailOverline">01 // ARCHITECTURE</p>
+              <h2 id="detailTitle">Backend<span>.</span></h2>
+              <p class="detail-lead" id="detailLead"></p>
+              <p class="detail-description" id="detailDescription"></p>
+              <div class="detail-actions"><span class="detail-connection"><i></i> ACTIVE CONNECTION</span><button type="button" id="nextButton" class="next-button">DALŠÍ OBOR <span>↗</span></button></div>
+            </div>
+            <div class="detail-data">
+              <div class="detail-glass-top"><span>SKILLS & PRACTICE</span><span>● &nbsp; VERIFIED EXPERIENCE</span></div>
+              <h3>Technologie <em>& přístup</em></h3>
+              <div class="tech-tags" id="techTags"></div>
+              <div class="projects-head"><span>VYBRANÉ OBLASTI</span><span>↘</span></div>
+              <div class="project-list" id="projectList"></div>
+              <div class="detail-glass-footer">SPOJENÍ AKTIVNÍ <span>//</span> SIGURD.DEV.26</div>
+            </div>
+          </div>
+          <div id="extendedDomain" class="extended-domain"></div>
+          <div class="detail-bottom"><span>IDEAS INTO REALITY_</span><span id="detailPagination">01 — BACKEND</span></div>
+        </div>
+      </section>
+
+      <section class="about-view" id="aboutView" aria-hidden="true" aria-labelledby="aboutTitle">
+        <div class="about-inner">
+          <button type="button" id="aboutBack" class="back-button"><span class="back-symbol">←</span><span>ZPĚT DO SÍTĚ</span></button>
+          <p class="detail-overline">A LITTLE ABOUT ME / 2026</p>
+          
+          <div class="about-identity">
+            <div class="about-portrait-frame">
+              <img src="assets/sigurd-portrait.webp" alt="Profesní portrét Sigurda Gnezdilova" width="950" height="950" loading="eager" decoding="async">
+              <span class="about-portrait-orbit" aria-hidden="true"></span>
+            </div>
+            <div class="about-identity-copy">
+              <span class="about-identity-kicker">OSOBNĚ / ZA PROJEKTY</span>
+              <h2 id="aboutTitle">Spojuji <em>světy.</em></h2>
+              <p>Jsem Sigurd Gnezdilov. Jsem vývojář se silným backendovým základem. Zajímají mě řešení, která skutečně usnadňují lidem práci — ať už jde o firemní systém, web, malý nástroj nebo AI automatizaci.</p>
+            </div>
+          </div>
+          <h3 class="about-process-title">Jak přemýšlím o vývoji</h3>
+          <p>Nezačínám výběrem frameworku ani psaním kódu. Nejprve potřebuji pochopit, <strong>jaký problém řešíme, koho se týká a proč stojí za to ho vyřešit.</strong> Teprve potom hledám cíl, vhodný rozsah řešení a způsob, jak poznáme, že skutečně funguje.</p>
+          <div class="about-process" aria-label="Můj přístup k vývoji">
+            <article><span>01 / PROBLÉM</span><h4>Porozumět potřebě</h4><p>Ptám se, co dnes nefunguje, co brzdí uživatele a kde vzniká zbytečná práce.</p></article>
+            <article><span>02 / CÍL</span><h4>Definovat výsledek</h4><p>Stanovím, co má být po dokončení jednodušší, rychlejší nebo spolehlivější.</p></article>
+            <article><span>03 / NÁVRH</span><h4>Najít přiměřené řešení</h4><p>Zvážím alternativy, technologie, rizika a minimální rozsah pro ověření nápadu.</p></article>
+            <article><span>04 / PROTOTYP</span><h4>Ověřit předpoklady</h4><p>Rychlým prototypem zjistím, zda navržený postup dává smysl skutečným uživatelům.</p></article>
+            <article><span>05 / REALIZACE</span><h4>Stavět a kontrolovat</h4><p>Postupuji po částech, s code review, testy, diagnostikou a průběžnou zpětnou vazbou.</p></article>
+            <article><span>06 / VÝSLEDEK</span><h4>Měřit a zlepšovat</h4><p>Ověřím funkčnost i přínos, opravím slabá místa a připravím řešení na další rozvoj.</p></article>
+          </div>
+          <p>V týmu mi dává smysl transparentní backlog, jasné priority, iterativní dodávka a společná odpovědnost za kvalitu. AI využívám jako nástroj pro rychlejší analýzu, prototypování a automatizaci — ne jako náhradu přemýšlení nebo testování.</p>
+          <div class="about-stats"><span><b>05</b>OBORŮ</span><span><b>∞</b>MOŽNOSTÍ</span><span><b>01</b>MYSL</span></div>
+          <button type="button" class="about-explore" id="aboutExplore">PROZKOUMAT OBORY ↗</button>
+        </div>
+      </section>
+    </main>
+
+    <div class="cv-modal" id="cvModal" hidden>
+      <div class="cv-modal-backdrop" data-cv-close></div>
+      <section class="cv-modal-panel" role="dialog" aria-modal="true" aria-labelledby="cvModalTitle" aria-describedby="cvModalDescription" tabindex="-1">
+        <button class="cv-modal-close" type="button" data-cv-close aria-label="Zavřít okno">×</button>
+        <span class="cv-modal-kicker"><span class="cv-live-dot"></span> PRIVATE / CONNECTION REQUEST</span>
+        <div class="cv-modal-symbol" aria-hidden="true"><span>CV</span></div>
+        <h2 id="cvModalTitle">Získat moje <em>CV.</em></h2>
+        <p id="cvModalDescription">Zadejte e-mail, na který vám mohu zaslat svůj profesní životopis. Po odeslání žádosti se vám ozvu osobně.</p>
+        <form id="cvRequestForm" novalidate>
+          <label for="cvEmail">VÁŠ E-MAIL</label>
+          <div class="cv-input-shell"><span aria-hidden="true">@</span><input id="cvEmail" name="email" type="email" autocomplete="email" inputmode="email" placeholder="vas@email.cz" maxlength="254" required></div>
+          <div class="cv-honeypot" aria-hidden="true"><label for="cvWebsite">Web</label><input id="cvWebsite" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+          <p class="cv-privacy">E-mail použiji pouze pro vyřízení žádosti o CV. Nejedná se o přihlášení k odběru.</p>
+          <p class="cv-feedback" id="cvFeedback" role="status" aria-live="polite"></p>
+          <button class="cv-submit" type="submit"><span>ODESLAT ŽÁDOST</span><span aria-hidden="true">↗</span></button>
+        </form>
+      </section>
+    </div>
+    <nav class="domain-dock" id="domainDock" aria-label="Přepínání oborů" hidden></nav>
+    <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+  </div>
+  <script src="cv-request.js?v=14.2" defer></script>
+  <script src="portfolio-data.js?v=14.2" defer></script>
+  <script src="media-map.js?v=14.2" defer></script>
+  <script src="portfolio.js?v=14.2" defer></script>
+  <script src="portfolio-v3.js?v=14.2" defer></script>
+  <script src="app.js?v=14.2" defer></script>
+
+<div class="contact-modal" id="contactModal" hidden>
+  <div class="contact-shade" data-contact-close></div>
+  <section class="contact-dialog" role="dialog" aria-modal="true" aria-labelledby="contactModalTitle" tabindex="-1">
+    <button class="contact-close" type="button" aria-label="Zavřít kontaktní formulář" data-contact-close>×</button>
+    <span class="contact-kicker">◉ NOVÉ SPOJENÍ / CONTACT</span>
+    <h2 id="contactModalTitle">Bezplatná konzultace <em>nebo dotaz.</em></h2>
+    <p>Popište mi svůj nápad, problém nebo otázku. Ozvu se vám osobně.</p>
+    <div data-contact-form></div>
+    <p class="contact-alt">Chcete více prostoru? <a href="kontakt.html">Otevřít kontaktní stránku ↗</a></p>
+  </section>
+</div>
+<script src="contact.js?v=14.2" defer></script>
+</body>
+</html>
