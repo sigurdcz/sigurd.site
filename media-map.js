@@ -11,6 +11,7 @@ window.NEURAL_MEDIA = {
   darkmasterweb: mediaSet('dark-master-web', 4),
   sigurdsite: mediaSet('sigurd-site-portfolio', 2),
   taura: mediaSet('taura-vill', 2),
+  foxis: mediaSet('foxis', 1),
   ced: mediaSet('ced-voice-memory', 4),
   cedai: mediaSet('ced-voice-memory', 4),
   eleven: mediaSet('elevenlabs-game-audio-studio', 3),
