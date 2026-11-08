@@ -1,0 +1,25 @@
+/* Právní a informační stránky (nástroj Scheduler): samostatné, bez závislosti na neuronové scéně. */
+:root { color-scheme: dark; --bg: #050912; --panel: #0b1322; --line: #1c2a44; --text: #dbe4f5; --dim: #8fa0bf; --accent: #5ee0c0; }
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+a { color: var(--accent); text-underline-offset: 3px; }
+.legal-header { display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; align-items: center; justify-content: space-between; padding: 1rem 16px; border-bottom: 1px solid var(--line); }
+.legal-brand { color: var(--text); font-weight: 700; letter-spacing: .08em; text-decoration: none; }
+.legal-brand span { color: var(--accent); }
+.legal-nav { display: flex; flex-wrap: wrap; gap: .25rem 1.1rem; font-size: .92rem; }
+.legal-main { max-width: 760px; margin: 0 auto; padding: 2rem 16px 4rem; }
+.legal-main h1 { font-size: clamp(1.7rem, 5vw, 2.3rem); line-height: 1.2; margin: 0 0 .5rem; }
+.legal-main h2 { font-size: 1.2rem; margin: 2.2rem 0 .5rem; padding-top: .4rem; border-top: 1px solid var(--line); }
+.legal-lead { color: var(--dim); font-size: 1.05rem; }
+.legal-meta { color: var(--dim); font-size: .88rem; }
+.legal-main ul { padding-left: 1.2rem; }
+.legal-main li { margin: .3rem 0; }
+.legal-box { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 1rem 1.2rem; margin: 1.2rem 0; }
+.legal-table { width: 100%; border-collapse: collapse; font-size: .93rem; margin: 1rem 0; }
+.legal-table th, .legal-table td { border: 1px solid var(--line); padding: .5rem .7rem; text-align: left; vertical-align: top; }
+.legal-table th { background: var(--panel); }
+.legal-table code, .legal-main code { font-size: .85em; word-break: break-all; }
+.legal-foot { border-top: 1px solid var(--line); padding: 1.2rem 16px; text-align: center; font-size: .88rem; color: var(--dim); }
+.legal-foot a { margin: 0 .5rem; white-space: nowrap; }
+@media (max-width: 560px) { .legal-table { display: block; overflow-x: auto; } }
